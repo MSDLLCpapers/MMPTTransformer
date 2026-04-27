@@ -102,3 +102,34 @@ If you need help or want changes to this README (commands, examples, or extra se
 ## License
 
 This project is licensed under the terms in the `LICENSE` file.
+
+## Citation
+Multiple papers are associated with this repo.
+
+[^1] a chemistry-focused preprint, describing the comparison of **MMPT-FM** with MMP variants **MMP-M2M**, **MMP-C2V**, **MMP-M2T**.  
+[^1]: Pang, Hao-Wei, et al. "Scalable and Generalizable Analog Design via Learning Medicinal Chemistry Intuition from Matched Molecular Pair Transformations." (2026).
+```bibtex
+@article{pang2026scalable,
+  title={Scalable and Generalizable Analog Design via Learning Medicinal Chemistry Intuition from Matched Molecular Pair Transformations},
+  author={Pang, Hao-Wei and Zhang, Peter Zhiping and Pan, Bo and Zhao, Liang and Yu, Xiang and Zhang, Liying},
+  year={2026}
+}
+```
+[^2] a techinical paper describing the modeling details of **MMPT-FM** and its extention **MMPT-RAG**. 
+```bibtex
+@article{pan2026retrieval,
+  title={Retrieval-Augmented Foundation Models for Matched Molecular Pair Transformations to Recapitulate Medicinal Chemistry Intuition},
+  author={Pan, Bo and Zhang, Peter Zhiping and Pang, Hao-Wei and Zhu, Alex and Yu, Xiang and Zhang, Liying and Zhao, Liang},
+  journal={arXiv preprint arXiv:2602.16684},
+  year={2026}
+}
+```
+[3^] Workshop paper at The 2nd Workshop on LLMs4Bio at AAAI 2025 reporting predecessors of **MMP-M2M** and **MMP-M2T** (they were **Mol2Mol** and **Mol2Trans**, respecitively). 
+```bibtex
+@article{pan2026transformer,
+  title={Transformer-Based Approach for Automated Functional Group Replacement in Chemical Compounds},
+  author={Pan, Bo and Zhang, Zhiping and Spiekermann, Kevin and Chen, Tianchi and Yu, Xiang and Zhang, Liying and Zhao, Liang},
+  journal={arXiv preprint arXiv:2601.07930},
+  year={2026}
+}
+```
