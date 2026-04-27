@@ -116,6 +116,7 @@ Multiple papers are associated with this repo.
 }
 ```
 [^2] a techinical paper describing the modeling details of **MMPT-FM** and its extention **MMPT-RAG**. 
+[^2]: Pan, Bo, et al. "Retrieval-Augmented Foundation Models for Matched Molecular Pair Transformations to Recapitulate Medicinal Chemistry Intuition." arXiv preprint arXiv:2602.16684 (2026).
 ```bibtex
 @article{pan2026retrieval,
   title={Retrieval-Augmented Foundation Models for Matched Molecular Pair Transformations to Recapitulate Medicinal Chemistry Intuition},
@@ -124,7 +125,8 @@ Multiple papers are associated with this repo.
   year={2026}
 }
 ```
-[3^] Workshop paper at The 2nd Workshop on LLMs4Bio at AAAI 2025 reporting predecessors of **MMP-M2M** and **MMP-M2T** (they were **Mol2Mol** and **Mol2Trans**, respecitively). 
+[^3] Workshop paper at The 2nd Workshop on LLMs4Bio at AAAI 2025 reporting predecessors of **MMP-M2M** and **MMP-M2T** (they were **Mol2Mol** and **Mol2Trans**, respecitively). 
+[^3]: Pan, Bo, et al. "Transformer-Based Approach for Automated Functional Group Replacement in Chemical Compounds." arXiv preprint arXiv:2601.07930 (2026).
 ```bibtex
 @article{pan2026transformer,
   title={Transformer-Based Approach for Automated Functional Group Replacement in Chemical Compounds},
