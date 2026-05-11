@@ -14,6 +14,7 @@ This repo organizes code and data used to train, run inference with, and analyze
 - `model/` - Training and inference scripts
   - [model/train_MMPT.py](model/train_MMPT.py#L1)
   - [model/inference_MMPT.py](model/inference_MMPT.py#L1)
+  - [model/quick_start_inference.ipynb](model/quick_start_inference.ipynb)
 - `analysis/` - Jupyter notebooks and analysis utilities
   - [analysis/analysis_pmv17.ipynb](analysis/analysis_pmv17.ipynb#L1)
   - [analysis/analysis_pmv17_pmv21.ipynb](analysis/analysis_pmv17_pmv21.ipynb#L1)
@@ -44,14 +45,31 @@ pip install -r requirements.txt
 
 Note: the `requirements.txt` file has pinned versions to ensure reproducible environments. This ensures the code runs consistently across different systems and time periods.
 
-## Common tasks
+## Model
+
+Trained model endpoints, including MMPT_FM, MMP_M2M, MMP_M2T, MMP_C2V, are available at [Hugging Face Merck/MMPT-FM](https://huggingface.co/Merck/MMPT-FM/tree/main), and can be downloaded by following HF instruction; 
+for example, with 
+```bash
+hf download Merck/MMPT-FM --local-dir path/for/models
+```
+for large file download. 
+
+`model/quick_start_inference.ipynb` provides exemplary code for inference quick start. 
+
+| Model | foundational unit learned | Inference input | Inference output | Constant substructure dependence |
+| :--- | :--- | :--- | :--- | :--- |
+| MMPT-FM | MMPT (variable → variable) | Variable A | Variable B | Independent |
+| MMP-M2M | MMP instance (molecule → molecule) | Molecule A | Molecule B | Implicit (full molecular context) |
+| MMP-M2T | MMP instance with explicit variable | Molecule A + Variable A | Transformation variable A → B | Explicit (molecular + variable context) |
+| MMP-C2V | MMP instance (constant → variable) | Constant C (core or R-group set) | Variable B | Explicit (constant context) |
+
 
 
 Key training flags available in `model/train_MMPT.py` include:
 - `--model_type` (T5 | GPT | T5Chem | RealT5Chem)
 - `--dataset` (dataset name)
 - `--epochs`, `--batch_size`, `--learning_rate`, `--output_dir`
-- `--use_wandb` to enable Weights & Biases logging
+- `--use_wandb` to enable Weights & Biases logging (optional)
 
 
 Key inference flags available in `model/inference_MMPT.py` include:
@@ -62,7 +80,7 @@ Key inference flags available in `model/inference_MMPT.py` include:
 Adjust `num_beams` and `num_return_sequences` so that `num_beams >= num_return_sequences`.
 
 
-## Notebooks and analysis
+## Analysis
 
 Open the notebooks in `analysis/` for visualizations and exploratory analyses. Example notebooks:
 
@@ -71,7 +89,7 @@ Open the notebooks in `analysis/` for visualizations and exploratory analyses. E
 
 **Note:** The analysis notebooks require external sample data files (model outputs, REINVENT results) that are not included in this repository. To use these notebooks:
 
-1. Prepare or obtain the required sample data files
+1. Prepare the required sample data files
 2. Update the `DATA_ROOT` configuration variable at the top of each notebook to point to your data directory
 3. Run the notebook cells with your configured data path
 
@@ -84,15 +102,9 @@ pip install jupyterlab
 jupyter lab
 ```
 
-## Data
+## Training Data
 
 Some exemplary datasets are stored in `data/`. 
-
-## Troubleshooting
-
-- GPU not detected: make sure CUDA and a compatible `torch` build are installed. Check `torch.cuda.is_available()`.
-- Tokenizer / model errors: ensure `--model_path` points to the trained model directory containing the tokenizer and model weights.
-
 
 
 ## Contact
